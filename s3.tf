@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "private_s3_bucket" {
-  bucket = "${var.bucket}"
+  bucket = var.bucket
 
   lifecycle {
     prevent_destroy = false
