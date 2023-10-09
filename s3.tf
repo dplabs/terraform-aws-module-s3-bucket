@@ -16,3 +16,14 @@ resource "aws_s3_bucket_public_access_block" "private_s3_bucket" {
   ignore_public_acls      = true
   restrict_public_buckets = true
 }
+
+resource "aws_s3_bucket_website_configuration" "private_s3_bucket_redirection" {
+  bucket = aws_s3_bucket.private_s3_bucket.id
+
+  redirect_all_requests_to {
+    host_name = var.redirect_to
+  }
+
+  count = var.redirect_to == null ? 0 : 1
+}
+
