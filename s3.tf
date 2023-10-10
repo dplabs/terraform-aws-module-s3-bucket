@@ -5,7 +5,7 @@ resource "aws_s3_bucket" "private_s3_bucket" {
     prevent_destroy = false
   }
 
-  tags = local.common_tags
+  tags = local.common_tags.Type == null ? merge(local.common_tags, { Type = "data-storage" }) : local.common_tags
 }
 
 resource "aws_s3_bucket_public_access_block" "private_s3_bucket" {
