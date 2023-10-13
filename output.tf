@@ -15,6 +15,6 @@ output "s3_bucket_regional_domain_name" {
 }
 
 output "s3_bucket_website_endpoint" {
-  value = local.is_website ? aws_s3_bucket_website_configuration.s3_bucket_website[0].website_endpoint : aws_s3_bucket_website_configuration.s3_bucket_redirection[0].website_endpoint
+  value = local.is_website ? aws_s3_bucket_website_configuration.s3_bucket_website[0].website_endpoint : local.is_website_redirection ? aws_s3_bucket_website_configuration.s3_bucket_redirection[0].website_endpoint : null
 }
 
