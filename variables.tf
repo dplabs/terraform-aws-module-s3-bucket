@@ -1,6 +1,13 @@
-variable "bucket" {
+variable "bucket_name" {
   description = "Bucket name"
   type        = string
+  default     = null
+}
+
+variable "domain_name" {
+  description = "URL to redirect to"
+  type        = string
+  default     = null
 }
 
 variable "redirect_to" {
@@ -8,7 +15,6 @@ variable "redirect_to" {
   type        = string
   default     = null
 }
-
 
 variable "tags" {
   description = "Tags to set for all resources"
