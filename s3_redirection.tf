@@ -7,4 +7,3 @@ resource "aws_s3_bucket_website_configuration" "s3_bucket_redirection" {
 
   count = local.is_website_redirection ? 1 : 0
 }
-

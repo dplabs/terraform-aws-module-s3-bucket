@@ -79,5 +79,3 @@ resource "aws_s3_bucket_policy" "prod_media_bucket" {
 
   count = local.is_website ? 1 : 0
 }
-
-
