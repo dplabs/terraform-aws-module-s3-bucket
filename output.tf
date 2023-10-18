@@ -18,3 +18,7 @@ output "s3_bucket_website_endpoint" {
   value = local.is_website ? aws_s3_bucket_website_configuration.s3_bucket_website[0].website_endpoint : local.is_website_redirection ? aws_s3_bucket_website_configuration.s3_bucket_redirection[0].website_endpoint : null
 }
 
+output "s3_bucket_hosted_zone_id" {
+  value = local.is_website ? aws_s3_bucket_website_configuration.s3_bucket_website[0].hosted_zone_id : local.is_website_redirection ? aws_s3_bucket_website_configuration.s3_bucket_redirection[0].hosted_zone_id : null
+}
+
