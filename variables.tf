@@ -1,17 +1,17 @@
 variable "bucket_name" {
-  description = "Bucket name"
+  description = "Bucket name to use for S3 data storage"
   type        = string
   default     = null
 }
 
 variable "domain_name" {
-  description = "URL to redirect to"
+  description = "Name of the domain / subdomain to host or being redirected from"
   type        = string
   default     = null
 }
 
 variable "redirect_to" {
-  description = "URL to redirect to"
+  description = "Name of the domain / subdomain to redirect to"
   type        = string
   default     = null
 }
