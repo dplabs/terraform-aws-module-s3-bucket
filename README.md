@@ -31,6 +31,20 @@ Terraform module that creates an S3 bucket in AWS supporting:
 | `s3_bucket_website_endpoint` | | `string` |
 | `s3_bucket_hosted_zone_id` | | `string` |
 
+## Contributing
+
+Once you checkout the project, you should install `pre-commit`. Also, the hooks currently defined rely on having `tflint` in your system available:
+
+```
+paru pre-commit tflint
+```
+
+and once these commands are available, you should install the git hooks:
+
+```
+pre-commit install
+```
+
 ## Authors
 
 Module is maintained by [Daniel Pecos Martínez](https://github.com/dpecos) with help from [these awesome contributors](https://github.com/dplabs/terraform-module-s3-bucket/graphs/contributors).
