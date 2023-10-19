@@ -3,6 +3,7 @@ resource "aws_s3_bucket_website_configuration" "s3_bucket_redirection" {
 
   redirect_all_requests_to {
     host_name = var.redirect_to
+    protocol  = "https"
   }
 
   count = local.is_website_redirection ? 1 : 0
