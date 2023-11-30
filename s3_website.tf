@@ -44,7 +44,7 @@ resource "aws_s3_bucket_ownership_controls" "s3_bucket_website_ownership" {
   count = local.is_website ? 1 : 0
 }
 
-resource "aws_s3_bucket_policy" "prod_media_bucket" {
+resource "aws_s3_bucket_policy" "s3_bucket_website_policy" {
   bucket = aws_s3_bucket.s3_bucket.id
   policy = jsonencode({
     Version = "2012-10-17"
