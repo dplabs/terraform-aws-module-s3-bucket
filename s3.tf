@@ -16,3 +16,13 @@ resource "aws_s3_bucket_public_access_block" "s3_bucket" {
   ignore_public_acls      = local.is_website ? false : true
   restrict_public_buckets = local.is_website ? false : true
 }
+
+resource "aws_s3_bucket_server_side_encryption_configuration" "s3_bucket" {
+  bucket = aws_s3_bucket.s3_bucket.id
+
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm = "AES256"
+    }
+  }
+}
